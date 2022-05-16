@@ -1,12 +1,12 @@
 import { SequelizeModule } from "@nestjs/sequelize";
 
-export const sequelizeConfig = SequelizeModule.forRoot({
+export default SequelizeModule.forRoot({
   dialect: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "postgres",
-  password: "password",
-  database: "nest-ulbi",
+  host: process.env.POSTGRES_HOST,
+  port: Number(process.env.POSTGRES_PORT),
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
   models: [],
   autoLoadModels: true,
 });
