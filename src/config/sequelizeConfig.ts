@@ -1,4 +1,5 @@
 import { SequelizeModule } from "@nestjs/sequelize";
+import { UserModel } from "src/users/user.model";
 
 export default SequelizeModule.forRoot({
   dialect: "postgres",
@@ -7,6 +8,6 @@ export default SequelizeModule.forRoot({
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  models: [],
+  models: [UserModel],
   autoLoadModels: true,
 });
