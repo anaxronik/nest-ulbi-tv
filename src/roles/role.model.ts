@@ -10,7 +10,10 @@ interface RoleCreationAttrs {
 }
 
 @Table({ tableName: "roles" })
-export class RoleModel extends Model<RoleModel, RoleCreationAttrs> {
+export class RoleModel extends Model<
+  RoleModel,
+  RoleCreationAttrs
+> {
   @ApiProperty()
   @Column({
     type: DataType.INTEGER,
@@ -31,8 +34,6 @@ export class RoleModel extends Model<RoleModel, RoleCreationAttrs> {
   @ApiProperty()
   @Column({
     type: DataType.STRING,
-    unique: true,
-    allowNull: true,
   })
   description: string;
 
